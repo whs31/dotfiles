@@ -49,4 +49,5 @@ def copytree(src, dst, symlinks=False, ignore=None):
 if __name__ == '__main__':
     copytree(os.path.expanduser('~/.config/kitty'), './kitty')
     copytree(os.path.expanduser('~/.config/hypr'), './hypr')
+    copytree(os.path.expanduser('~/.config/waybar'), './waybar')
     copyfile(os.path.expanduser('~/.zshrc'), './.zshrc')

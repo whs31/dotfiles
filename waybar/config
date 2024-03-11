@@ -1,0 +1,73 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "modules-left": ["hyprland/window"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["custom/terminal", "custom/files", "custom/browser", "custom/apps", "tray", "hyprland/language", "pulseaudio", "network", "clock", "custom/power"],
+
+    // Custom modules
+    "custom/apps": {
+        "format": " ",
+        "on-click": "telegram-desktop",
+    },
+    "custom/browser": {
+        "format": " ",
+        "on-click": "firefox",
+    },
+    "custom/files": {
+        "format": " ",
+        "on-click": "nautilus",
+    },
+    "custom/terminal": {
+        "format": " ",
+        "on-click": "kitty",
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "~/.local/share/bin/powermenu",
+    },
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "warp-on-scroll": true,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": " {icon} ",
+        "format-icons": {
+            "10": "0",
+        }
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-ru": "RU",
+        "on-click": "hyprctl switchxkblayout evision-rgb-keyboard next",
+    },
+    "hyprland/window": {
+        "format": "{title}",
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 5
+    },
+    "clock": {
+        "format": "{:  %I:%M %p}",
+        "on-click": "gnome-calendar"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "~/.local/share/bin/wifimenu"
+    },
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": " {volume}%",
+        "on-click": "pavucontrol"
+    },
+}
